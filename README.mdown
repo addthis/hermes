@@ -1,0 +1,93 @@
+# Hermes PageSpeed
+
+## What's this?
+
+Hermes PageSpeed is a library and application for performance measuring
+of website load time. It's distinguishing features are twofold:
+it is programmable using the Selenium framework and it conducts
+repeated experiments to determine statistically significant results.
+
+There are many good performance measurement tools available online.
+Several popular sites include Google's 
+[PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/),
+Yahoo's [YSlow](http://yslow.org/), and [WebPageTest](http://www.webpagetest.org/).
+This application allows you to measure site performance if you need to 
+perform some kind of action in order to get to the page you want to measure,
+such as providing a username and password for example. The application performs
+multiple iterations of the experiment so that summary statistics for each
+measurement are generated.
+
+## Building
+
+Hermes PageRacer uses the ChromeDriver framework to issue commands to the
+Chrome browser. You must have the Chrome browser installed on the your machine.
+The framework is built using [Apache Maven](http://maven.apache.org/). Use
+`mvn package` to build the application.
+
+## Use
+
+You must have the [chromedriver](https://code.google.com/p/selenium/wiki/ChromeDriver)
+binary either in your PATH or set the system property webdriver.chrome.driver.
+You must also be running a [Selenium Server](http://www.seleniumhq.org/download/) instance.
+
+Run `java -jar target/page-racer-[latest version]-uber.jar` without any
+arguments to see a list of command line options. The `--url` and `--output`
+options are mandatory. The former specifies an url for measuring page
+load times and the latter specifies a path and filename for the gzipped output
+results. The python script `bin/graph.py` can be used to process the output
+results and generate pretty graphs. Example graphs are shown at the
+bottom of the page.
+
+The primary entry points into this library are the `com.addthis.site.test.framework`
+and the `com.addthis.site.test.configuration` packages.
+To write your own test procedures use the the class Main as a template.
+The primary class that orchestrates the tests is PerformanceTest.
+It uses the builder pattern to create new tests. You will be instantiating instances
+of the Navigator and Transformer interfaces. The provided classes SinglePageNavigator and
+IdentityTransformer can either be used directly or as templates for your own tests.
+
+## Use and Abuse of Statistics
+
+This tool can be used to generate summary statitics about a site of interest.
+It cannot determine at what point a site is ready for browsing or user 
+interaction. Only you can make that determination. The application measures the
+load time for page assets. You must determine which page asset(s) you can use
+as a signal to indicate that the page is ready. For example if you know that an
+asset will be loaded on the bottom of the page off the screen that it will not
+be productive to use that asset as an indicator of page readiness.
+
+## Known Issues
+
+On some linux systems you may need to install gconf if it is not present
+on your system. This is a ChromeDriver issue. You may also see the
+log messages "[WARNING]: PAC support disabled because there is no system implementation"
+and "Only local connections are allowed." Those messages can be ignored.
+
+## License
+
+Hermes PageSpeed is released under the Apache License Version 2.0.  See
+[Apache](http://www.apache.org/licenses/LICENSE-2.0) or the LICENSE for details.
+
+## Example Usage
+
+These are 100 iterations of measuring the [Space Jam](http://www2.warnerbros.com/spacejam/movie/jam.htm) homepage.
+
+The [startTime](http://www.w3.org/TR/resource-timing/#startTime-attribute) of page resources.
+
+![Start Time](examples/spacejam-beginning.png)
+
+The [responseEnd](http://www.w3.org/TR/resource-timing/#dom-performanceresourcetiming-responseend) of page resources.
+
+![End Time](examples/spacejam-end.png)
+
+The elapsed time of resource loads as calculated by (responseEnd - startTime).
+
+![Duration](examples/spacejam-duration.png)
+
+The legend for previous three graphs.
+
+![Legend](examples/spacejam-legend.png)
+
+Measurements from the [Navigation Timing API](http://www.w3.org/TR/navigation-timing/).
+
+![Navigation Timing API](examples/spacejam-navigation.png)

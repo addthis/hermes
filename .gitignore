@@ -1,0 +1,8 @@
+target/
+.classpath
+.project
+.settings/
+.idea/
+hermes-pagespeed.iml
+pom.xml.versionsBackup
+.#*
