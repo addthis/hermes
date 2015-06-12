@@ -11,16 +11,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.addthis.pageracer.internal;
+package com.addthis.hermes.internal;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import com.addthis.pageracer.configuration.Transformer;
-import com.addthis.pageracer.data.NavigationTiming;
-import com.addthis.pageracer.data.ResourceTiming;
+import com.addthis.hermes.configuration.Transformer;
+import com.addthis.hermes.data.NavigationTiming;
+import com.addthis.hermes.data.ResourceTiming;
 
 public class Manager {
 

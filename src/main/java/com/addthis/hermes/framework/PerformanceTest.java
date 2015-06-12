@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.addthis.pageracer.framework;
+package com.addthis.hermes.framework;
 
 import javax.annotation.Nullable;
 
@@ -26,14 +26,14 @@ import java.util.zip.GZIPOutputStream;
 
 import java.nio.file.Path;
 
-import com.addthis.pageracer.configuration.IdentityTransformer;
-import com.addthis.pageracer.configuration.Navigator;
-import com.addthis.pageracer.configuration.SinglePageNavigator;
-import com.addthis.pageracer.configuration.Transformer;
-import com.addthis.pageracer.data.NavigationTiming;
-import com.addthis.pageracer.data.ResourceTiming;
-import com.addthis.pageracer.internal.Manager;
-import com.addthis.pageracer.internal.MeasurementTree;
+import com.addthis.hermes.configuration.IdentityTransformer;
+import com.addthis.hermes.configuration.Navigator;
+import com.addthis.hermes.configuration.SinglePageNavigator;
+import com.addthis.hermes.configuration.Transformer;
+import com.addthis.hermes.data.NavigationTiming;
+import com.addthis.hermes.data.ResourceTiming;
+import com.addthis.hermes.internal.Manager;
+import com.addthis.hermes.internal.MeasurementTree;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;

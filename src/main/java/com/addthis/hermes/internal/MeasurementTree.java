@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.addthis.pageracer.internal;
+package com.addthis.hermes.internal;
 
 import javax.annotation.Nullable;
 
@@ -21,8 +21,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.addthis.pageracer.data.NavigationTiming;
-import com.addthis.pageracer.data.ResourceTiming;
+import com.addthis.hermes.data.NavigationTiming;
+import com.addthis.hermes.data.ResourceTiming;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Objects;

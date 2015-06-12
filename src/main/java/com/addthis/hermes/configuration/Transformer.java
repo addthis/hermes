@@ -11,12 +11,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.addthis.pageracer.configuration;
+package com.addthis.hermes.configuration;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.addthis.pageracer.data.ResourceTiming;
+import com.addthis.hermes.data.ResourceTiming;
 
 /**
  * This interface allows transformations to be performed on the names of measurements prior

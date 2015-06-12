@@ -11,7 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.addthis.pageracer.framework;
+package com.addthis.hermes.framework;
 
 import java.io.IOException;
 
@@ -19,8 +19,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import com.addthis.pageracer.configuration.IdentityTransformer;
-import com.addthis.pageracer.configuration.SinglePageNavigator;
+import com.addthis.hermes.configuration.IdentityTransformer;
+import com.addthis.hermes.configuration.SinglePageNavigator;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;

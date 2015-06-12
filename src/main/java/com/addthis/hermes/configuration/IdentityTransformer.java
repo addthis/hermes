@@ -11,11 +11,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.addthis.pageracer.configuration;
+package com.addthis.hermes.configuration;
 
 import java.util.regex.Pattern;
 
-import com.addthis.pageracer.data.ResourceTiming;
+import com.addthis.hermes.data.ResourceTiming;
 
 public class IdentityTransformer implements Transformer {
     private static final Pattern[] EMPTY_PATTERNS = new Pattern[0];

@@ -11,22 +11,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.addthis.pageracer.configuration;
+package com.addthis.hermes.configuration;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
- * The navigator interface is used to direct the
- * <a href="https://code.google.com/p/selenium/wiki/ChromeDriver">ChromeDriver</a>
- * to perform a series of actions prior to recording
- * the performance of a web page. If multiple pages
- * are navigated by this interface then measurements
- * are stored for the last page that is visited.
- * See the {@link SinglePageNavigator}
- * as an example of visiting a single url.
+ * This implementation of the {@link Navigator}
+ * interface visits a specified web page. The page
+ * racer will record page loading measurements for
+ * the page that is specified.
  */
-public interface Navigator {
+public class SinglePageNavigator implements Navigator {
 
-    public void navigate(ChromeDriver driver);
+    private final String url;
+
+    public SinglePageNavigator(String url) {
+        this.url = url;
+    }
+
+    @Override
+    public void navigate(ChromeDriver driver) {
+        driver.get(url);
+    }
 
 }
