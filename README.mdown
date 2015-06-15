@@ -19,7 +19,7 @@ measurement are generated.
 
 ## Building
 
-Hermes PageRacer uses the ChromeDriver framework to issue commands to the
+Hermes PageSpeed uses the ChromeDriver framework to issue commands to the
 Chrome browser. You must have the Chrome browser installed on the your machine.
 The framework is built using [Apache Maven](http://maven.apache.org/). Use
 `mvn package` to build the application.
