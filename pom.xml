@@ -144,4 +144,10 @@
        </plugin>
       </plugins>
   </reporting>
+  <scm>
+    <connection>scm:git:git@github.com:addthis/hermes.git</connection>
+    <developerConnection>scm:git:git@github.com:addthis/hermes.git</developerConnection>
+    <url>https://github.com/addthis/hermes</url>
+    <tag>HEAD</tag>
+  </scm>
 </project>
